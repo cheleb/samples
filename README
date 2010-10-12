@@ -15,3 +15,11 @@ From root:
 
 mvn clean install
 
+Import in eclipse:
+
+From an mavenized eclipse:
+
+  Import >> Maven >> Existing Maven Projects
+  Browse to root project.
+
+Enjoy.
