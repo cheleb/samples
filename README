@@ -1,1 +1,17 @@
 Montpellier JUG Maven Sample.
+Three projects contained in a root project:
+
+--+ france-inter-jug called "root" project for clarity.
+  |
+  +-- france-inter-jug-store called "store" project for clarity
+  |
+  +-- france-inter-jug-business called "business" project for clarity
+  |
+  +-- france-inter-jug-webapp called "webapp" project for clarity
+
+A DB init script is available in store/src/main/database.
+
+From root:
+
+mvn clean install
+
