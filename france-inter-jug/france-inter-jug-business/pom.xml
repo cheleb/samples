@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>org.jugmontpellier.france-inter-jug</groupId>
+	<artifactId>france-inter-jug-business</artifactId>
+	<name>france-inter-jug-business</name>
+	<description></description>
+	<version>1.0.0</version>
+	<parent>
+		<artifactId>france-inter-jug</artifactId>
+		<groupId>org.jugmontpellier</groupId>
+		<version>1.0.0</version>
+	</parent>
+
+	<build>
+		
+		<plugins>
+			<plugin>
+				<groupId>org.maven.ide.eclipse</groupId>
+				<artifactId>lifecycle-mapping</artifactId>
+				<version>0.10.0</version>
+				<configuration>
+					<mappingId>customizable</mappingId>
+					<configurators>
+						<!-- remove javaConfigurator in EAR pom.xml -->
+						<configurator id='org.maven.ide.eclipse.jdt.javaConfigurator' />
+					</configurators>
+					<mojoExecutions>
+						<mojoExecution>org.apache.maven.plugins:maven-resources-plugin::resources,testResources</mojoExecution>
+					</mojoExecutions>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	<dependencies>
+		<dependency>
+			<groupId>org.easymock</groupId>
+			<artifactId>easymock</artifactId>
+			<version>2.4</version>
+			<scope>test</scope>
+		</dependency>
+		<!--+ | | Model dependencies | + -->
+		<dependency>
+			<groupId>org.jugmontpellier.france-inter-jug</groupId>
+			<artifactId>france-inter-jug-store</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+	</dependencies>
+
+
+
+
+</project>

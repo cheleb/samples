@@ -1,0 +1,12 @@
+<jpa:persistence xmlns:jpa="http://java.sun.com/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
+	version="1.0">
+  <jpa:persistence-unit name="france-inter-jug-store">
+  <jpa:properties>
+  </jpa:properties>
+ </jpa:persistence-unit>
+
+</jpa:persistence>
+
