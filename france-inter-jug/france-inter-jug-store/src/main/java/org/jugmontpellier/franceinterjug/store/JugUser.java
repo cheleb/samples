@@ -2,6 +2,7 @@ package org.jugmontpellier.franceinterjug.store;
 
 import java.io.Serializable;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.Entity;
@@ -69,7 +70,7 @@ public class JugUser implements Serializable {
 	 * @generated
 	 **/
 	@ManyToMany(mappedBy = "jugusers")
-	private Set<Jug> jugs;
+	private Set<Jug> jugs = new HashSet<Jug>();
 
 	/**
 	 * 
@@ -252,4 +253,29 @@ public class JugUser implements Serializable {
 		buffer.append("]");
 		return buffer.toString();
 	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + id;
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		JugUser other = (JugUser) obj;
+		if (id != other.id)
+			return false;
+		return true;
+	}
+	
+	
+	
 }

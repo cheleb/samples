@@ -5,6 +5,7 @@ package org.jugmontpellier.franceinterjug.store.dao;
 import java.util.List;
 
 import org.jugmontpellier.franceinterjug.store.Jug;
+import org.jugmontpellier.franceinterjug.store.JugUser;
 
 
 
@@ -72,6 +73,13 @@ public interface JugDAO  {
 	 * @generated
 	 */
 	public void remove(Jug jug);
+
+	/**
+	 * Add a JugUser to a Jug.
+	 * @param jug 
+	 * @param jugUser
+	 */
+	public void addJugUser(Jug jug, JugUser jugUser);
 
 }
 

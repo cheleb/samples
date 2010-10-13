@@ -6,6 +6,7 @@ package org.jugmontpellier.franceinterjug.store.component.dao;
 import java.util.List;
 
 import org.jugmontpellier.franceinterjug.store.Jug;
+import org.jugmontpellier.franceinterjug.store.JugUser;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -126,6 +127,13 @@ public class JugDAOImpl implements JugDAO {
 	 */
 	public void remove(Jug jug) {
 		entityManager.remove(jug);
+	}
+
+	@Override
+	public void addJugUser(Jug jug, JugUser jugUser) {
+
+		jug.addToJugusers(jugUser);
+		
 	}
 
 }
