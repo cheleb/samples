@@ -3,6 +3,3 @@ target/
 .classpath
 .project
 .springBeans
-/target
-/.classpath
-/.settings/
