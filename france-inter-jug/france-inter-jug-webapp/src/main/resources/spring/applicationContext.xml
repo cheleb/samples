@@ -13,6 +13,10 @@
 
 	<context:annotation-config />
 	
+	
+	<context:property-placeholder location="classpath:/jug.properties" />
+	
+	
 	<import resource="classpath:/spring/france-inter-jug-store-context.xml"/>
 
 </beans>

@@ -11,12 +11,25 @@
 	<packaging>pom</packaging>
 	<properties>
 		<spring.version>3.0.4.RELEASE</spring.version>
+		<conf>dev</conf>
 	</properties>
 	<modules>
 		<module>france-inter-jug-store</module>
 		<module>france-inter-jug-business</module>
 		<module>france-inter-jug-webapp</module>
 	</modules>
+
+
+
+	<profiles>
+		<profile>
+			<id>int</id>
+			<properties>
+				<conf>int</conf>
+			</properties>
+		</profile>
+	</profiles>
+
 
 	<build>
 		<finalName>jugs</finalName>
@@ -109,7 +122,7 @@
 				<artifactId>spring-orm</artifactId>
 				<version>${spring.version}</version>
 			</dependency>
-			
+
 			<dependency>
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-test</artifactId>

@@ -38,7 +38,7 @@ public class JugDAOTestCase {
 	 * @generated
 	 */
 	@Autowired
-	JugDAO aJugDAO;
+	private JugDAO aJugDAO;
 
 	/**
 	 * @generated Test the read method.

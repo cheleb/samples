@@ -25,7 +25,7 @@
 		<property name="persistenceUnitName" value="france-inter-jug-store" />
 		<property name="jpaVendorAdapter">
 			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
-				<property name="showSql" value="false" />
+				<property name="showSql" value="${database.showsql}" />
 				<property name="databasePlatform" value="org.hibernate.dialect.PostgreSQLDialect" />
 			</bean>
 		</property>
