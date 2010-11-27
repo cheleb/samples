@@ -5,6 +5,6 @@ import org.jugmontpellier.franceinterjug.store.JugUser;
 
 public interface JugRegistrationManager {
 
-	public abstract void registrer(JugUser jugUser, Jug jug) throws AlreadyRegisteredExeption;
+	public void register(JugUser jugUser, Jug jug) throws AlreadyRegisteredExeption;
 
 }

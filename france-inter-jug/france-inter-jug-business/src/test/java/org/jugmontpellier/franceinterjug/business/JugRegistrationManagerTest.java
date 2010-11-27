@@ -43,7 +43,7 @@ public class JugRegistrationManagerTest {
 	}
 
 	/**
-	 * Test method for {@link org.jugmontpellier.franceinterjug.business.JugRegistrationManager#registrer(org.jugmontpellier.franceinterjug.store.JugUser, org.jugmontpellier.franceinterjug.store.Jug)}.
+	 * Test method for {@link org.jugmontpellier.franceinterjug.business.JugRegistrationManager#register(org.jugmontpellier.franceinterjug.store.JugUser, org.jugmontpellier.franceinterjug.store.Jug)}.
 	 * @throws AlreadyRegisteredExeption 
 	 */
 	@Test
@@ -54,7 +54,7 @@ public class JugRegistrationManagerTest {
 		
 		EasyMock.replay(jugDAO);
 		
-		jugRegistrationManager.registrer(jugUser, jug);
+		jugRegistrationManager.register(jugUser, jug);
 		
 		
 		EasyMock.verify(jugDAO);
@@ -62,7 +62,7 @@ public class JugRegistrationManagerTest {
 
 	
 	/**
-	 * Test method for {@link org.jugmontpellier.franceinterjug.business.JugRegistrationManager#registrer(org.jugmontpellier.franceinterjug.store.JugUser, org.jugmontpellier.franceinterjug.store.Jug)}.
+	 * Test method for {@link org.jugmontpellier.franceinterjug.business.JugRegistrationManager#register(org.jugmontpellier.franceinterjug.store.JugUser, org.jugmontpellier.franceinterjug.store.Jug)}.
 	 * @throws AlreadyRegisteredExeption 
 	 */
 	@Test(expected=AlreadyRegisteredExeption.class)
@@ -75,7 +75,7 @@ public class JugRegistrationManagerTest {
 		
 		EasyMock.replay(jugDAO);
 		
-		jugRegistrationManager.registrer(jugUser, jug);
+		jugRegistrationManager.register(jugUser, jug);
 		
 		
 		EasyMock.verify(jugDAO);

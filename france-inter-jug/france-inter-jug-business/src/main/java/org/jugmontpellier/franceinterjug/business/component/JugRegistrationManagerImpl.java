@@ -31,7 +31,7 @@ public class JugRegistrationManagerImpl implements JugRegistrationManager {
 
 	@Transactional
 	@Override
-	public void registrer(JugUser jugUser, Jug jug) throws AlreadyRegisteredExeption {
+	public void register(JugUser jugUser, Jug jug) throws AlreadyRegisteredExeption {
 
 		if (jug.getJugusers().contains(jugUser)) {
 			throw new AlreadyRegisteredExeption();
