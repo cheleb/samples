@@ -7,9 +7,17 @@
 <title>Index page</title>
 </head>
 <body>
+ <script src="http://www.java.com/js/deployJava.js"></script>
+    <script> 
+        var attributes = {codebase: 'webstart', archive: 'france-inter-jug-applet-1.0.0.jar', code:'org.jugmontpellier.franceinterjug.client.HelloWorldApplet',  width:300, height:300} ; 
+        var parameters = {jnlp_href: 'http://localhost:8080/jugs/webstart/launch2.jnlp'} ; 
+        deployJava.runApplet(attributes, parameters, '1.6'); 
+    </script>
+
 <h1>Welcome page</h1>
 
-
+<a href="spring/jug/list">List des jugs</a>
+<a href="webstart/launch.jnlp">jnlp</a>
 
 </body>
 </html>

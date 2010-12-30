@@ -16,6 +16,7 @@
 	<modules>
 		<module>france-inter-jug-store</module>
 		<module>france-inter-jug-business</module>
+		<module>france-inter-jug-applet</module>
 		<module>france-inter-jug-webapp</module>
 	</modules>
 
@@ -32,7 +33,7 @@
 
 
 	<build>
-		<finalName>jugs</finalName>
+		
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>

@@ -9,17 +9,22 @@
 	<description></description>
 	<version>1.0.0</version>
 	<packaging>war</packaging>
+	
+	<organization>
+	<name>jug</name>
+	</organization>
+	
 	<parent>
 		<artifactId>france-inter-jug</artifactId>
 		<groupId>org.jugmontpellier</groupId>
 		<version>1.0.0</version>
 	</parent>
 
-	
+
 
 
 	<build>
-
+		<finalName>jugs</finalName>
 		<filters>
 			<filter>src/main/filter/default.properties</filter>
 			<filter>src/main/filter/${conf}.properties</filter>
@@ -63,6 +68,42 @@
 					</mojoExecutions>
 				</configuration>
 			</plugin>
+
+
+			<plugin>
+				<groupId>org.codehaus.mojo.webstart</groupId>
+				<artifactId>webstart-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<phase>process-resources</phase>
+						<goals>
+							<goal>jnlp-download-servlet</goal>
+						</goals>
+					</execution>
+				</executions>
+
+				<configuration>
+
+					<jnlpFiles>
+						<jnlpFile>
+							<templateFilename>clientTemplate.vm</templateFilename>
+							<jarResources>
+								<jarResource>
+									<groupId>${project.groupId}</groupId>
+									<artifactId>france-inter-jug-applet</artifactId>
+									<version>${project.version}</version>
+									<mainClass>org.jugmontpellier.franceinterjug.client.HelloWorldApplet</mainClass>
+								</jarResource>
+							</jarResources>
+						</jnlpFile>
+					</jnlpFiles>
+
+				</configuration>
+
+			</plugin>
+
+
+
 		</plugins>
 		<pluginManagement>
 			<plugins>
@@ -77,12 +118,6 @@
 
 	</build>
 	<dependencies>
-		<dependency>
-			<groupId>org.easymock</groupId>
-			<artifactId>easymock</artifactId>
-			<version>2.4</version>
-			<scope>test</scope>
-		</dependency>
 		<!--+ | | Model dependencies | + -->
 		<dependency>
 			<groupId>org.jugmontpellier.france-inter-jug</groupId>
@@ -114,6 +149,30 @@
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
+		</dependency>
+
+		<!-- Provided dependencies -->
+
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.5</version>
+			<scope>provided</scope>
+		</dependency>
+
+
+		<dependency>
+			<groupId>tmp</groupId>
+			<artifactId>webstart-jnlp-servlet</artifactId>
+			<version>1.0-6.0.02_ea_b02.1</version>
+		</dependency>
+
+		<!-- Test dependencies -->
+		<dependency>
+			<groupId>org.easymock</groupId>
+			<artifactId>easymock</artifactId>
+			<version>2.4</version>
+			<scope>test</scope>
 		</dependency>
 	</dependencies>
 

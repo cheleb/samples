@@ -12,19 +12,16 @@
 </head>
 <body>
   <h1>JUG List</h1>
-  
+  <sf:form modelAttribute="jug">
   <table>
-  <c:forEach items="${list}" var="jug">
   <tr>
-   <s:url value="/spring/jug/edit/{id}" var="url" >
-     <s:param name="id" value="${jug.id }"></s:param>
-   </s:url>   
-   <td>${jug.name} </td><td><a href="${url }">edit</a></td>
-   
+   <td><sf:hidden path="id" />   ${jug.id} </td>
+   <td><sf:input path="name" /></td>
+   <td><input type="text" name="comment" /></td>
   </tr>
-  </c:forEach>
   </table>
-  
+  <input type="submit" />
+  </sf:form>
   <a href="..">Back</a>
   
 </body>
