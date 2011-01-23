@@ -17,6 +17,7 @@
 	<properties>
 		<!-- Who want to maintain unit test on db ? -->
 		<maven.test.skip>true</maven.test.skip>
+		<confDir>store</confDir>
 	</properties>
 
 	<build>
