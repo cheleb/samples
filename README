@@ -3,7 +3,8 @@ Three projects contained in a root project:
 
 --+ france-inter-jug called "root" project for clarity.
   |
-  +-- france-inter-jug-assemblies called "assemblies" project for clarity. This project contains assemblies used in other projects.
+  +-- france-inter-jug-assemblies called "assemblies" project for clarity.
+  |    This project contains assemblies used in other projects.
   |
   +-- france-inter-jug-store called "store" project for clarity
   |
