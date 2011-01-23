@@ -32,17 +32,66 @@
 					</mojoExecutions>
 				</configuration>
 			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>2.2</version>
+				<dependencies>
+					<dependency>
+						<groupId>org.jugmontpellier.france-inter-jug</groupId>
+						<artifactId>france-inter-jug-assemblies</artifactId>
+						<version>1.0.0</version>
+					</dependency>
+				</dependencies>
+				<executions>
+					<execution>
+						<id>server conf</id>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+						<configuration>
+							<descriptorRefs>
+								<descriptorRef>france-inter-jug-conf-aggregate</descriptorRef>
+							</descriptorRefs>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
 		</plugins>
 	</build>
 	<dependencies>
 		<dependency>
-			<!--+ | | Model dependencies | + -->
 			<groupId>org.jugmontpellier.france-inter-jug</groupId>
 			<artifactId>france-inter-jug-store</artifactId>
 			<version>1.0.0</version>
 		</dependency>
 
+
+		<!-- configuration assemblies -->
+
+		<dependency>
+			<groupId>org.jugmontpellier.france-inter-jug</groupId>
+			<artifactId>france-inter-jug-store</artifactId>
+			<version>1.0.0</version>
+			<classifier>conf</classifier>
+			<type>zip</type>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.jugmontpellier.france-inter-jug</groupId>
+			<artifactId>france-inter-jug-messaging</artifactId>
+			<version>1.0.0</version>
+			<classifier>conf</classifier>
+			<type>zip</type>
+			<scope>provided</scope>
+		</dependency>
+
 		<!-- Testing -->
+
+
 
 
 		<dependency>
@@ -63,6 +112,8 @@
 			<version>2.4</version>
 			<scope>test</scope>
 		</dependency>
+
+
 
 	</dependencies>
 
