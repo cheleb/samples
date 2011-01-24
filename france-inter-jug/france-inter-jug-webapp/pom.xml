@@ -35,9 +35,9 @@
 				<directory>src/main/resources</directory>
 				<filtering>true</filtering>
 			</resource>
-			
+
 			<resource>
-				<directory>target-deployed</directory>
+				<directory>target-deployed/conf</directory>
 				<filtering>true</filtering>
 			</resource>
 
@@ -48,6 +48,28 @@
 
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-clean-plugin</artifactId>
+				<version>2.4.1</version>
+				<configuration>
+					<filesets>
+						<fileset>
+							<directory>target-deployed/conf</directory>
+							<includes>
+								<include>**/*</include>
+							</includes>
+						</fileset>
+						<fileset>
+							<directory>target-deployed/webapp</directory>
+							<includes>
+								<include>**/*</include>
+							</includes>
+						</fileset>
+					</filesets>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
 					<source>1.6</source>
@@ -55,6 +77,23 @@
 					<encoding>UTF-8</encoding>
 				</configuration>
 			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.1</version>
+				<configuration>
+					<!-- http://maven.apache.org/plugins/maven-war-plugin/ -->
+					<warSourceDirectory>src/main/webapp</warSourceDirectory>
+					<webResources>
+						<resource>
+							<directory>target-deployed/webapp</directory>
+							<filtering>false</filtering>
+						</resource>
+					</webResources>
+				</configuration>
+			</plugin>
+
 
 			<plugin>
 				<groupId>org.maven.ide.eclipse</groupId>
@@ -103,7 +142,7 @@
 							</jarResources>
 						</jnlpFile>
 					</jnlpFiles>
-
+					<workDirectory>target-deployed/webapp/webstart</workDirectory>
 				</configuration>
 
 			</plugin>
@@ -114,7 +153,7 @@
 				<version>2.1</version>
 				<executions>
 					<execution>
-						<id>unpack-server-conf-core</id>
+						<id>unpack-server-conf</id>
 						<goals>
 							<goal>unpack</goal>
 						</goals>
@@ -133,6 +172,22 @@
 								</artifactItem>
 							</artifactItems>
 
+						</configuration>
+					</execution>
+					<execution>
+						<id>unpack-webmodule</id>
+						<goals>
+							<goal>unpack-dependencies</goal>
+						</goals>
+						<phase>generate-resources</phase>
+						<configuration>
+
+							<outputDirectory>target-deployed/webapp/</outputDirectory>
+
+							<includeGroupIds>${project.groupId}</includeGroupIds>
+							<includeArtifactIds>france-inter-jug-webmodule</includeArtifactIds>
+							<classifier>webresource</classifier>
+							<type>zip</type>
 						</configuration>
 					</execution>
 				</executions>
@@ -154,6 +209,17 @@
 
 	</build>
 	<dependencies>
+
+		<dependency>
+			<groupId>org.jugmontpellier.france-inter-jug</groupId>
+			<artifactId>france-inter-jug-webmodule</artifactId>
+			<version>1.0.0</version>
+			<classifier>webresource</classifier>
+			<type>zip</type>
+			<!-- do not deploy -->
+			<scope>provided</scope>
+		</dependency>
+
 		<!--+ | | Model dependencies | + -->
 		<dependency>
 			<groupId>org.jugmontpellier.france-inter-jug</groupId>
