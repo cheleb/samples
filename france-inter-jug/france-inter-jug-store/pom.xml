@@ -6,11 +6,11 @@
 	<artifactId>france-inter-jug-store</artifactId>
 	<name>france-inter-jug-store</name>
 	<description />
-	<version>1.0.1-SNAPSHOT</version>
+	<version>1.0.1</version>
 	<parent>
 		<artifactId>france-inter-jug</artifactId>
 		<groupId>org.jugmontpellier</groupId>
-		<version>1.0.1-SNAPSHOT</version>
+		<version>1.0.1</version>
 	</parent>
 
 	<properties>
