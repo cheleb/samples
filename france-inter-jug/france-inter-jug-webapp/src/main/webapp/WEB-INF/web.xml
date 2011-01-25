@@ -10,6 +10,7 @@
 	</context-param>
 
 
+<!--
 	<servlet>
 		<servlet-name>JnlpDownloadServlet</servlet-name>
 		<servlet-class>jnlp.sample.servlet.JnlpDownloadServlet</servlet-class>
@@ -19,6 +20,7 @@
 		<servlet-name>JnlpDownloadServlet</servlet-name>
 		<url-pattern>/webstart/*</url-pattern>
 	</servlet-mapping>
+-->
 
 
 
