@@ -6,7 +6,7 @@
 	<artifactId>france-inter-jug</artifactId>
 	<name>france-inter-jug</name>
 	<description />
-	<version>1.0.1</version>
+	<version>1.0.2-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<properties>
 		<spring.version>3.0.5.RELEASE</spring.version>
