@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>org.jugmontpellier</groupId>
@@ -44,6 +45,16 @@
 			<properties>
 				<conf>int</conf>
 			</properties>
+		</profile>
+
+		<profile>
+			<id>rc</id>
+			<distributionManagement>
+				<repository>
+					<id>staging</id>
+					<url>http://localhost:8081/nexus/content/repositories/staging/</url>
+				</repository>
+			</distributionManagement>
 		</profile>
 
 		<profile>
@@ -237,6 +248,7 @@
 			<id>www.yourcompany.com</id>
 			<url>file://Users/chelebithil/tmp/oula/</url>
 		</site>
+
 	</distributionManagement>
 
 
