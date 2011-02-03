@@ -3,9 +3,9 @@
 	 <parent>
 	 <groupId>org.jugmontpellier</groupId> 
 	 <artifactId>france-inter-jug</artifactId>
-	 <version>1.1.4</version>
+	 <version>1.1.5-SNAPSHOT</version>
 	 </parent>
 	<groupId>org.jugmontpellier.france-inter-jug</groupId>
 	<artifactId>france-inter-jug-assemblies</artifactId>
-	<version>1.1.4</version>
+	<version>1.1.5-SNAPSHOT</version>
 </project>
