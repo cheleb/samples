@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>org.jugmontpellier</groupId>
@@ -51,6 +52,7 @@
 			<distributionManagement>
 				<repository>
 					<id>staging</id>
+					<name>Staging</name>
 					<url>http://localhost:8081/nexus/content/repositories/staging/</url>
 				</repository>
 			</distributionManagement>
@@ -184,7 +186,8 @@
 				<artifactId>maven-release-plugin</artifactId>
 				<version>2.1</version>
 				<configuration>
-					<pushChanges>true</pushChanges>
+					<pushChanges>false</pushChanges>
+					<localCheckout>true</localCheckout>
 					<autoVersionSubmodules>true</autoVersionSubmodules>
 				</configuration>
 			</plugin>
@@ -242,13 +245,6 @@
 		</dependencies>
 	</dependencyManagement>
 
-	<distributionManagement>
-		<site>
-			<id>www.yourcompany.com</id>
-			<url>file://Users/chelebithil/tmp/oula/</url>
-		</site>
-
-	</distributionManagement>
 
 
 </project>
