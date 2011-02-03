@@ -6,11 +6,11 @@
 	<artifactId>france-inter-jug-business</artifactId>
 	<name>france-inter-jug-business</name>
 	<description />
-	<version>1.1.1</version>
+	<version>1.1.2-SNAPSHOT</version>
 	<parent>
 		<artifactId>france-inter-jug</artifactId>
 		<groupId>org.jugmontpellier</groupId>
-		<version>1.1.1</version>
+		<version>1.1.2-SNAPSHOT</version>
 	</parent>
 
 	<build>

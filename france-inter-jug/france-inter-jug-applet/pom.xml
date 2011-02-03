@@ -3,7 +3,7 @@
   <parent>
     <groupId>org.jugmontpellier</groupId>
     <artifactId>france-inter-jug</artifactId>
-    <version>1.1.1</version>
+    <version>1.1.2-SNAPSHOT</version>
   </parent>
   <groupId>org.jugmontpellier.france-inter-jug</groupId>
   <artifactId>france-inter-jug-applet</artifactId>
