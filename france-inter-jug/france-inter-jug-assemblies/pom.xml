@@ -7,5 +7,5 @@
 <!--	 </parent>-->
 	<groupId>org.jugmontpellier.france-inter-jug</groupId>
 	<artifactId>france-inter-jug-assemblies</artifactId>
-	<version>1.0.2-RC3</version>
+	<version>1.0.2-RC4-SNAPSHOT</version>
 </project>
