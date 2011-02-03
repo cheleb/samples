@@ -3,15 +3,21 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>org.jugmontpellier.france-inter-jug</groupId>
-	<artifactId>france-inter-jug-business</artifactId>
-	<name>france-inter-jug-business</name>
+	<artifactId>france-inter-jug-store</artifactId>
+	<name>france-inter-jug-store</name>
 	<description />
-	<version>1.1.0-SNAPSHOT</version>
+	<version>1.0.2-RC3</version>
 	<parent>
 		<artifactId>france-inter-jug</artifactId>
 		<groupId>org.jugmontpellier</groupId>
-		<version>1.1.0-SNAPSHOT</version>
+		<version>1.0.2-RC3</version>
 	</parent>
+
+	<properties>
+		<!-- Who want to maintain unit test on db ? -->
+		<maven.test.skip>true</maven.test.skip>
+		<confDir>store</confDir>
+	</properties>
 
 	<build>
 
@@ -31,91 +37,62 @@
 					</mojoExecutions>
 				</configuration>
 			</plugin>
-
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-assembly-plugin</artifactId>
-				<version>2.2</version>
-				<dependencies>
-					<dependency>
-						<groupId>org.jugmontpellier.france-inter-jug</groupId>
-						<artifactId>france-inter-jug-assemblies</artifactId>
-						<version>${project.version}</version>
-					</dependency>
-				</dependencies>
-				<executions>
-					<execution>
-						<id>server conf</id>
-						<phase>package</phase>
-						<goals>
-							<goal>single</goal>
-						</goals>
-						<configuration>
-							<descriptorRefs>
-								<descriptorRef>france-inter-jug-conf-aggregate</descriptorRef>
-							</descriptorRefs>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-
 		</plugins>
 	</build>
 	<dependencies>
+		<!--+ | | Model dependencies | + -->
 		<dependency>
-			<groupId>org.jugmontpellier.france-inter-jug</groupId>
-			<artifactId>france-inter-jug-store</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-
-
-		<!-- configuration assemblies -->
-
-		<dependency>
-			<groupId>org.jugmontpellier.france-inter-jug</groupId>
-			<artifactId>france-inter-jug-store</artifactId>
-			<version>${project.version}</version>
-			<classifier>conf</classifier>
-			<type>zip</type>
-			<scope>provided</scope>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>3.3.2.GA</version>
 		</dependency>
 		<dependency>
-			<groupId>org.jugmontpellier.france-inter-jug</groupId>
-			<artifactId>france-inter-jug-messaging</artifactId>
-			<version>${project.version}</version>
-			<classifier>conf</classifier>
-			<type>zip</type>
-			<scope>provided</scope>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
 		</dependency>
-
-		<!-- Testing -->
-
-
-
-
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-tx</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aspects</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aop</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.9</version>
+		</dependency>
+		<!-- test dependencies -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.7</version>
 			<scope>test</scope>
 		</dependency>
-
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>org.easymock</groupId>
 			<artifactId>easymock</artifactId>
 			<version>2.4</version>
 			<scope>test</scope>
 		</dependency>
-
-
-
+		<dependency>
+			<groupId>postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>8.3-603.jdbc3</version>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
-
-
-
 </project>
