@@ -217,6 +217,11 @@
 		</dependency>
 
 		<!--+ | | Model dependencies | + -->
+<!-- 		<dependency> -->
+<!-- 			<groupId>org.jugmontpellier.france-inter-jug</groupId> -->
+<!-- 			<artifactId>france-inter-jug-messaging</artifactId> -->
+<!-- 			<version>${project.version}</version> -->
+<!-- 		</dependency> -->
 		<dependency>
 			<groupId>org.jugmontpellier.france-inter-jug</groupId>
 			<artifactId>france-inter-jug-business</artifactId>

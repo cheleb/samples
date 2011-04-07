@@ -15,8 +15,8 @@
 
 
 	<scm>
-		<connection>scm:git@github.com:cheleb/samples.git</connection>
-		<developerConnection>scm:git:git@github.com:cheleb/samples.git</developerConnection>
+		<connection>scm:git@github.com:cheleb/samples.git/france-inter-jug</connection>
+		<developerConnection>scm:git:git@github.com:cheleb/samples.git/france-inter-jug</developerConnection>
 	</scm>
 
 

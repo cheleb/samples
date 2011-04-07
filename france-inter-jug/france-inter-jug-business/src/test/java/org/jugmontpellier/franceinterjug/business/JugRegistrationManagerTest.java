@@ -3,10 +3,7 @@
  */
 package org.jugmontpellier.franceinterjug.business;
 
-import static org.junit.Assert.*;
-
 import javax.inject.Inject;
-import javax.inject.Named;
 
 import org.easymock.EasyMock;
 import org.jugmontpellier.franceinterjug.store.Jug;
